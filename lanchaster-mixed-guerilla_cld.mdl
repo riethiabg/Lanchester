@@ -1,0 +1,192 @@
+{UTF-8}
+********************************************************
+	.lanchaster-mixed cld
+********************************************************~
+		Based on Vikram Mittal (20.09.2022). Basic Attrition Models Provide \
+		Insight into Russian Woes in Russia-Ukraine War. Forbes. \
+		https://www.forbes.com/sites/vikrammittal/2022/09/20/basic-attrition-models\
+		-provide-insight-into-russian-woes-in-russia-ukraine-war/
+	|
+
+********************************************************
+	.ukrainian-war cld
+********************************************************~
+		Based on Vikram Mittal (20.09.2022). Basic Attrition Models Provide \
+		Insight into Russian Woes In Russia-Ukraine War. Forbes. \
+		https://www.forbes.com/sites/vikrammittal/2022/09/20/basic-attrition-models\
+		-provide-insight-into-russian-woes-in-russia-ukraine-war/
+	|
+
+initial size of RED forces=
+	2
+	~	Strength
+	~		|
+
+size of RED forces= INTEG (
+	-BLUE killing RED,
+		initial size of RED forces)
+	~	Strength
+	~	RED troops.
+	|
+
+size of BLUE forces= INTEG (
+	-RED killing BLUE,
+		initial size of BLUE forces)
+	~	Strength
+	~	BLUE troops.
+	|
+
+initial size of BLUE forces=
+	1
+	~	Strength
+	~		|
+
+BLUE killing RED=
+	attrition coefficient of RED for BLUE*size of BLUE forces
+	~	Strength/Year
+	~		|
+
+attrition coefficient of BLUE for RED=
+	0.1
+	~	1/(Strength*Year)
+	~		|
+
+attrition coefficient of RED for BLUE=
+	0.5
+	~	1/Year
+	~		|
+
+RED killing BLUE=
+	attrition coefficient of BLUE for RED*size of RED forces*size of BLUE forces
+	~	Strength/Year
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 4
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|255-255-255|96,96,100,0
+10,1,size of BLUE forces,312,200,37,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,size of RED forces,469,300,31,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,RED killing BLUE,469,194,39,27,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,BLUE killing RED,318,313,41,28,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,attrition coefficient of BLUE for RED,622,185,62,27,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,attrition coefficient of RED for BLUE,167,313,58,28,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,7,3,1,1,0,45,0,2,64,0,-1--1--1,|||0-0-0,1|(391,165)|
+1,8,1,4,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(290,253)|
+1,9,1,3,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(389,234)|
+1,10,5,3,0,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(0,0)|
+1,11,2,3,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(490,248)|
+1,12,4,2,1,0,45,0,2,64,0,-1--1--1,|||0-0-0,1|(394,338)|
+1,13,6,4,0,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(0,0)|
+12,14,0,392,277,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+12,15,0,393,199,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+10,16,initial size of RED forces,620,298,46,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,17,16,2,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,18,initial size of BLUE forces,160,195,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,19,18,1,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|255-255-255|96,96,100,0
+12,1,0,135,119,80,20,3,124,0,0,0,0,0,0,0,0,0,0,0,0
+attrition coefficient of BLUE for RED,0,1,0.005
+12,2,0,134,272,80,20,3,124,0,0,0,0,0,0,0,0,0,0,0,0
+attrition coefficient of RED for BLUE,0,1,0.01
+12,3,0,421,168,150,150,3,44,0,0,1,0,0,0,0,0,0,0,0,0
+Levels
+12,4,0,134,51,80,20,3,124,0,0,0,0,0,0,0,0,0,0,0,0
+initial size of BLUE forces,0,2,0.01
+12,5,0,134,199,80,20,3,124,0,0,0,0,0,0,0,0,0,0,0,0
+initial size of RED forces,0,2,0.01
+12,6,0,725,167,150,150,3,44,0,0,1,0,0,0,0,0,0,0,0,0
+Phase_Space
+12,7,0,136,350,80,20,3,124,0,0,0,0,0,0,0,0,0,0,0,0
+FINAL TIME,0,20,0.1
+///---\\\
+:GRAPH Levels
+:TITLE Levels
+:X-AXIS Time
+:X-LABEL Time
+:SCALE
+:VAR size of BLUE forces
+:DATASET *1
+:VAR size of RED forces
+:DATASET *1
+
+:GRAPH Phase_Space
+:TITLE Phase Space
+:X-AXIS size of RED forces
+:X-MIN 0
+:SCALE
+:VAR size of BLUE forces
+:Y-MIN 0
+:DATASET *1
+:L<%^E!@
+1:mixed_cld.vdfx
+4:Time
+5:attrition coefficient of BLUE for RED
+9:mixed_cld
+19:100,1
+24:0
+25:4
+26:4
+23:0
+15:0,0,0,1,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:0
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Arial|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

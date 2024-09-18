@@ -1,0 +1,252 @@
+{UTF-8}
+BLUE unaimed fire=
+	(1-visibility of RED)*size of BLUE forces*size of RED forces/density effect of RED
+	~	Strength
+	~		|
+
+RED aimed fire=
+	visbility of BLUE*size of RED forces
+	~	Strength
+	~		|
+
+BLUE aimed fire=
+	visibility of RED*size of BLUE forces
+	~	Strength
+	~		|
+
+BLUE killing RED=
+	attrition coefficient of RED for BLUE*(BLUE aimed fire+BLUE unaimed fire)
+	~	Strength/Year
+	~		|
+
+density effect of RED=
+	1
+	~	Strength
+	~		|
+
+density effect of BLUE=
+	1
+	~	Strength
+	~		|
+
+RED killing BLUE=
+	attrition coefficient of BLUE for RED*(RED aimed fire+RED unaimed fire)
+	~	Strength/Year
+	~		|
+
+visibility of RED=
+	0.5
+	~	Dmnl
+	~		|
+
+visbility of BLUE=
+	0.5
+	~	Dmnl
+	~		|
+
+RED unaimed fire=
+	(1-visbility of BLUE)*size of RED forces*size of BLUE forces/density effect of BLUE
+	~	Strength
+	~		|
+
+initial size of RED forces=
+	2
+	~	Strength
+	~		|
+
+size of RED forces= INTEG (
+	-BLUE killing RED,
+		initial size of RED forces)
+	~	Strength
+	~	Russian troops.
+	|
+
+size of BLUE forces= INTEG (
+	-RED killing BLUE,
+		initial size of BLUE forces)
+	~	Strength
+	~	Ukrainian troops.
+	|
+
+initial size of BLUE forces=
+	1
+	~	Strength
+	~		|
+
+attrition coefficient of BLUE for RED=
+	0.25
+	~	1/Year
+	~		|
+
+attrition coefficient of RED for BLUE=
+	0.5
+	~	1/Year
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 4
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.25
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|255-255-255|96,96,100,0
+10,1,size of BLUE forces,287,217,37,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,size of RED forces,464,440,31,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,RED killing BLUE,467,204,27,27,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,BLUE killing RED,338,477,26,31,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,attrition coefficient of BLUE for RED,598,186,59,21,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,attrition coefficient of RED for BLUE,175,487,63,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,7,3,1,1,0,45,0,2,64,0,-1--1--1,|||0-0-0,1|(389,179)|
+1,8,1,31,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(206,273)|
+1,9,1,25,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(331,268)|
+1,10,5,3,0,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(0,0)|
+1,11,2,24,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(522,376)|
+1,12,4,2,1,0,45,0,2,64,0,-1--1--1,|||0-0-0,1|(399,493)|
+1,13,6,4,0,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(0,0)|
+12,14,0,360,347,18,18,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R1-3
+12,15,0,385,227,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B1
+10,16,initial size of RED forces,578,435,46,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,17,16,2,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,18,initial size of BLUE forces,152,212,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,19,18,1,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+1,20,2,32,1,0,43,0,2,64,0,-1--1--1,|||0-0-0,1|(377,393)|
+12,21,0,395,458,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B2
+10,22,visbility of BLUE,610,261,30,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,23,density effect of BLUE,423,364,35,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,24,RED aimed fire,522,322,25,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,25,RED unaimed fire,398,283,31,24,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,26,2,25,1,0,43,0,0,192,0,-1--1--1,,1|(461,366)|
+1,27,22,24,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,28,22,25,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,29,25,3,1,0,43,0,0,64,0,-1--1--1,,1|(441,259)|
+1,30,24,3,1,0,43,0,0,64,0,-1--1--1,,1|(519,267)|
+10,31,BLUE aimed fire,203,373,23,24,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,32,BLUE unaimed fire,283,400,28,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,33,density effect of RED,297,311,35,24,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,34,visibility of RED,129,438,31,17,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,35,31,4,1,0,43,0,0,64,0,-1--1--1,,1|(245,449)|
+1,36,1,32,1,0,43,0,0,64,0,-1--1--1,,1|(249,297)|
+1,37,32,4,1,0,43,0,0,64,0,-1--1--1,,1|(299,445)|
+1,38,33,32,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,39,23,25,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,40,34,32,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,41,34,31,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|255-255-255|96,96,100,0
+12,1,0,104,158,79,49,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+density effect of BLUE,0,10,0.1
+12,2,0,273,155,80,51,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+density effect of RED,0,10,0.1
+12,3,0,107,248,80,63,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+visbility of BLUE,0,1,0.01
+12,4,0,285,252,82,58,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+visibility of RED,0,1,0,01
+12,5,0,103,51,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+initial size of BLUE forces,0,100,1
+12,6,0,275,52,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+initial size of RED forces,0,100,1
+12,7,0,107,372,71,66,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+attrition coefficient of BLUE for RED,0,5,0.1
+12,8,0,290,373,67,69,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+attrition coefficient of RED for BLUE,0,5,0.1
+12,9,0,555,170,168,140,8,15,0,0,1,0,0,0,0,0,0,0,0,0
+Levels
+12,10,0,884,173,159,142,8,15,0,0,1,0,0,0,0,0,0,0,0,0
+Phase_Space
+///---\\\
+:GRAPH Levels
+:TITLE Levels
+:X-AXIS Time
+:X-LABEL Time
+:WIDTH 3
+:HEIGHT 3
+:NO-LEGEND 2
+:SCALE
+:VAR size of BLUE forces
+:DATASET *1
+:LINE-WIDTH 1
+:VAR size of RED forces
+:DATASET *1
+:LINE-WIDTH 1
+
+:GRAPH Phase_Space
+:TITLE Phase Space
+:X-AXIS size of RED forces
+:X-MIN 0
+:WIDTH 3
+:HEIGHT 3
+:NO-LEGEND 2
+:SCALE
+:VAR size of BLUE forces
+:Y-MIN 0
+:DATASET *1
+:LINE-WIDTH 1
+:L<%^E!@
+4:Time
+5:BLUE unaimed fire
+9:visibility_cld
+19:100,0
+24:0
+25:10
+26:10
+23:0
+15:0,0,0,1,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:0
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+108:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Times New Roman|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

@@ -4,6 +4,8 @@ The English engineer Frederick William Lanchester in 1916 and Russian military o
 
 Lanchester’s Second Linear Law is used for unaimed fires, where a military indiscriminately shells large swathes of land rather than specifically targeting enemy forces. In this case, the casualty rate scales with the number of firers and the number of targets. Lanchester’s Square Law is used for modern militaries that are concentrating their forces and targeting specific enemies. For this case, the casualty rate scales with the number of firers.
 
+The models are implemented with Vensim and NetLogo.
+
 
 ## References
 
